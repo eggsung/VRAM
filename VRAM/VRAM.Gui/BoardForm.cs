@@ -29,7 +29,7 @@ namespace VRAM.Gui
         {
             AdminForm adminForm = new AdminForm();
             adminForm.Show();
-            
+           
         }
     }
 }

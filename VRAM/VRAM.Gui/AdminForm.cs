@@ -15,6 +15,7 @@ namespace VRAM.Gui
         public AdminForm()
         {
             InitializeComponent();
+            
         }
 
         private void dgvSearch_CellContentClick(object sender, DataGridViewCellEventArgs e)
