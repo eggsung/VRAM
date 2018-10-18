@@ -42,6 +42,7 @@
           </Key>
           <Property Name="MemberId" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="Dummy" Type="bit" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -98,6 +99,27 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="Attendance_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MemberId" Type="nvarchar" Mode="In" />
+          <Parameter Name="Date" Type="date" Mode="In" />
+          <Parameter Name="InTime" Type="time" Mode="In" />
+          <Parameter Name="OutTime" Type="time" Mode="In" />
+          <Parameter Name="Status" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Board_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MemberId" Type="nvarchar" Mode="In" />
+          <Parameter Name="QNum" Type="int" Mode="In" />
+          <Parameter Name="Qcontext" Type="nvarchar" Mode="In" />
+          <Parameter Name="UpdateDate" Type="date" Mode="In" />
+          <Parameter Name="Answer" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Member_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MemberId" Type="nvarchar" Mode="In" />
+          <Parameter Name="MemberName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Password" Type="nvarchar" Mode="In" />
+          <Parameter Name="PhoneNum" Type="nvarchar" Mode="In" />
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+        </Function>
         <EntityContainer Name="VRAMModelStoreContainer">
           <EntitySet Name="Attendance" EntityType="Self.Attendance" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Board" EntityType="Self.Board" Schema="dbo" store:Type="Tables" />
@@ -160,7 +182,17 @@
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Attendance" Relationship="Self.FK_Attendance_Member" FromRole="Member" ToRole="Attendance" />
           <NavigationProperty Name="Boards" Relationship="Self.FK_Board_Member" FromRole="Member" ToRole="Board" />
-          <NavigationProperty Name="Role" Relationship="Self.MemberRole" FromRole="Member" ToRole="Role" />
+          <NavigationProperty Name="MemberRole" Relationship="Self.FK_MemberRole_Member" FromRole="Member" ToRole="MemberRole" />
+        </EntityType>
+        <EntityType Name="MemberRole">
+          <Key>
+            <PropertyRef Name="MemberId" />
+          </Key>
+          <Property Name="MemberId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RoleId" Type="Int32" Nullable="false" />
+          <Property Name="Dummy" Type="Boolean" />
+          <NavigationProperty Name="Member" Relationship="Self.FK_MemberRole_Member" FromRole="MemberRole" ToRole="Member" />
+          <NavigationProperty Name="Role" Relationship="Self.FK_MemberRole_Role" FromRole="MemberRole" ToRole="Role" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -168,7 +200,7 @@
           </Key>
           <Property Name="RoleId" Type="Int32" Nullable="false" />
           <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Members" Relationship="Self.MemberRole" FromRole="Role" ToRole="Member" />
+          <NavigationProperty Name="MemberRoles" Relationship="Self.FK_MemberRole_Role" FromRole="Role" ToRole="MemberRole" />
         </EntityType>
         <Association Name="FK_Attendance_Member">
           <End Role="Member" Type="Self.Member" Multiplicity="1" />
@@ -194,14 +226,35 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="MemberRole">
-          <End Role="Member" Type="Self.Member" Multiplicity="*" />
-          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+        <Association Name="FK_MemberRole_Member">
+          <End Role="Member" Type="Self.Member" Multiplicity="1" />
+          <End Role="MemberRole" Type="Self.MemberRole" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="MemberId" />
+            </Principal>
+            <Dependent Role="MemberRole">
+              <PropertyRef Name="MemberId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MemberRole_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="MemberRole" Type="Self.MemberRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="MemberRole">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <EntityContainer Name="VRAMEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Attendances" EntityType="Self.Attendance" />
           <EntitySet Name="Boards" EntityType="Self.Board" />
           <EntitySet Name="Members" EntityType="Self.Member" />
+          <EntitySet Name="MemberRoles" EntityType="Self.MemberRole" />
           <EntitySet Name="Roles" EntityType="Self.Role" />
           <AssociationSet Name="FK_Attendance_Member" Association="Self.FK_Attendance_Member">
             <End Role="Member" EntitySet="Members" />
@@ -211,10 +264,35 @@
             <End Role="Member" EntitySet="Members" />
             <End Role="Board" EntitySet="Boards" />
           </AssociationSet>
-          <AssociationSet Name="MemberRole" Association="Self.MemberRole">
+          <AssociationSet Name="FK_MemberRole_Member" Association="Self.FK_MemberRole_Member">
             <End Role="Member" EntitySet="Members" />
-            <End Role="Role" EntitySet="Roles" />
+            <End Role="MemberRole" EntitySet="MemberRoles" />
           </AssociationSet>
+          <AssociationSet Name="FK_MemberRole_Role" Association="Self.FK_MemberRole_Role">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="MemberRole" EntitySet="MemberRoles" />
+          </AssociationSet>
+          <FunctionImport Name="Attendance_Insert">
+            <Parameter Name="MemberId" Mode="In" Type="String" />
+            <Parameter Name="Date" Mode="In" Type="DateTime" />
+            <Parameter Name="InTime" Mode="In" Type="Time" />
+            <Parameter Name="OutTime" Mode="In" Type="Time" />
+            <Parameter Name="Status" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Board_Insert">
+            <Parameter Name="MemberId" Mode="In" Type="String" />
+            <Parameter Name="QNum" Mode="In" Type="Int32" />
+            <Parameter Name="Qcontext" Mode="In" Type="String" />
+            <Parameter Name="UpdateDate" Mode="In" Type="DateTime" />
+            <Parameter Name="Answer" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Member_Insert">
+            <Parameter Name="MemberId" Mode="In" Type="String" />
+            <Parameter Name="MemberName" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="PhoneNum" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -256,6 +334,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="MemberRoles">
+            <EntityTypeMapping TypeName="VRAMModel.MemberRole">
+              <MappingFragment StoreEntitySet="MemberRole">
+                <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="Dummy" ColumnName="Dummy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Roles">
             <EntityTypeMapping TypeName="VRAMModel.Role">
               <MappingFragment StoreEntitySet="Role">
@@ -264,14 +351,9 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="MemberRole" TypeName="VRAMModel.MemberRole" StoreEntitySet="MemberRole">
-            <EndProperty Name="Member">
-              <ScalarProperty Name="MemberId" ColumnName="MemberId" />
-            </EndProperty>
-            <EndProperty Name="Role">
-              <ScalarProperty Name="RoleId" ColumnName="RoleId" />
-            </EndProperty>
-          </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="Attendance_Insert" FunctionName="VRAMModel.Store.Attendance_Insert" />
+          <FunctionImportMapping FunctionImportName="Board_Insert" FunctionName="VRAMModel.Store.Board_Insert" />
+          <FunctionImportMapping FunctionImportName="Member_Insert" FunctionName="VRAMModel.Store.Member_Insert" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

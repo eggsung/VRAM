@@ -1,6 +1,6 @@
 ﻿namespace VRAM.Gui
 {
-    partial class Login
+    partial class LoginForm
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -58,6 +58,7 @@
             this.btnLogin.TabIndex = 21;
             this.btnLogin.Text = "Login(&L)";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // btnRegister
             // 
@@ -69,6 +70,7 @@
             this.btnRegister.TabIndex = 20;
             this.btnRegister.Text = "Register(&R)";
             this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // lbMemberId
             // 

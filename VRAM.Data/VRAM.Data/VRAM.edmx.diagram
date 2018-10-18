@@ -4,14 +4,16 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="7988e00cc1e342d58a9ec28717034280" Name="Diagram1">
-        <EntityTypeShape EntityType="VRAMModel.Attendance" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="VRAMModel.Board" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="VRAMModel.Member" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="VRAMModel.Role" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+      <Diagram DiagramId="e722dc7acc9f41138bdf8237d60d3904" Name="Diagram1">
+        <EntityTypeShape EntityType="VRAMModel.Attendance" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="VRAMModel.Board" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="VRAMModel.Member" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="VRAMModel.MemberRole" Width="1.5" PointX="6" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="VRAMModel.Role" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="VRAMModel.FK_Attendance_Member" ManuallyRouted="false" />
         <AssociationConnector Association="VRAMModel.FK_Board_Member" ManuallyRouted="false" />
-        <AssociationConnector Association="VRAMModel.MemberRole" ManuallyRouted="false" />
+        <AssociationConnector Association="VRAMModel.FK_MemberRole_Member" ManuallyRouted="false" />
+        <AssociationConnector Association="VRAMModel.FK_MemberRole_Role" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

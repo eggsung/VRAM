@@ -1,6 +1,6 @@
 ﻿namespace VRAM.Gui
 {
-    partial class Admin
+    partial class AdminForm
     {
         /// <summary>
         /// Required designer variable.

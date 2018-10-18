@@ -1,6 +1,6 @@
 ﻿namespace VRAM.Gui
 {
-    partial class Board
+    partial class BoardForm
     {
         /// <summary>
         /// Required designer variable.
@@ -60,7 +60,6 @@
             this.lbBoard.Size = new System.Drawing.Size(141, 56);
             this.lbBoard.TabIndex = 7;
             this.lbBoard.Text = "게시판";
-            this.lbBoard.Click += new System.EventHandler(this.lbl_Board_Click);
             // 
             // btnAdmin
             // 
@@ -71,6 +70,7 @@
             this.btnAdmin.TabIndex = 6;
             this.btnAdmin.Text = "관리";
             this.btnAdmin.UseVisualStyleBackColor = true;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
             // tabMenus
             // 
@@ -105,6 +105,7 @@
             this.btnWrite.TabIndex = 4;
             this.btnWrite.Text = "글쓰기";
             this.btnWrite.UseVisualStyleBackColor = true;
+            this.btnWrite.Click += new System.EventHandler(this.btnWrite_Click);
             // 
             // db_Qlist
             // 

@@ -29,6 +29,6 @@ namespace VRAM.Data
         public virtual Attendance Attendance { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Board> Boards { get; set; }
-        public virtual Role Role { get; set; }
+        public virtual MemberRole MemberRole { get; set; }
     }
 }

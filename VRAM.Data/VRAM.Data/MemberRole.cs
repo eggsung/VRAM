@@ -12,18 +12,13 @@ namespace VRAM.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Role
+    public partial class MemberRole
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Role()
-        {
-            this.MemberRoles = new HashSet<MemberRole>();
-        }
-    
+        public string MemberId { get; set; }
         public int RoleId { get; set; }
-        public string RoleName { get; set; }
+        public Nullable<bool> Dummy { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MemberRole> MemberRoles { get; set; }
+        public virtual Member Member { get; set; }
+        public virtual Role Role { get; set; }
     }
 }

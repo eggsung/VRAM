@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace VRAM.Gui
 {
-    public partial class Board : Form
+    public partial class AdminForm : Form
     {
-        public Board()
+        public AdminForm()
         {
             InitializeComponent();
         }
 
-        private void lbl_Board_Click(object sender, EventArgs e)
+        private void dgvSearch_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
 
         }

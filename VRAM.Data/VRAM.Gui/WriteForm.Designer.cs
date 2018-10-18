@@ -1,6 +1,6 @@
 ﻿namespace VRAM.Gui
 {
-    partial class Write
+    partial class WriteForm
     {
         /// <summary>
         /// Required designer variable.
