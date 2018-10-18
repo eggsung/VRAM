@@ -31,7 +31,9 @@ namespace VRAM.Gui
         private void btnLogin_Click(object sender, EventArgs e)
         {
             BoardForm boardForm = new BoardForm();
+            this.Hide();
             boardForm.ShowDialog();
+            this.Close();
         }
     }
 }
