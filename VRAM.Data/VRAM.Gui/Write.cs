@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace VRAM.Gui
 {
-    public partial class Form1 : Form
+    public partial class Write : Form
     {
-        public Form1()
+        public Write()
         {
             InitializeComponent();
         }
