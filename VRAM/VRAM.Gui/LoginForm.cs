@@ -34,7 +34,7 @@ namespace VRAM.Gui
 
         if (txtMemeberId.Text == "" || txtPassword.Text == "")
            {
-               MessageBox.Show("Please provide UserName and Password");
+               MessageBox.Show("Please provide MemberId and Password");
                return;
            }
            try
