@@ -8,5 +8,6 @@ namespace VRAM.Data
 {
     public class BoardData : EntityData<Board>
     {
+        
     }
 }

@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.dgvSearch = new System.Windows.Forms.DataGridView();
-            this.UserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PhoneNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtMemberName = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.lbMemberName = new System.Windows.Forms.Label();
             this.btnNotice = new System.Windows.Forms.Button();
+            this.MemberId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MemberName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,8 +47,8 @@
             // 
             this.dgvSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSearch.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.UserID,
-            this.UserName,
+            this.MemberId,
+            this.MemberName,
             this.Password,
             this.PhoneNum,
             this.Email});
@@ -58,36 +58,6 @@
             this.dgvSearch.Size = new System.Drawing.Size(745, 317);
             this.dgvSearch.TabIndex = 10;
             this.dgvSearch.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSearch_CellContentClick);
-            // 
-            // UserID
-            // 
-            this.UserID.DataPropertyName = "UserID";
-            this.UserID.HeaderText = "UserID";
-            this.UserID.Name = "UserID";
-            // 
-            // UserName
-            // 
-            this.UserName.DataPropertyName = "UserName";
-            this.UserName.HeaderText = "UserName";
-            this.UserName.Name = "UserName";
-            // 
-            // Password
-            // 
-            this.Password.DataPropertyName = "Password";
-            this.Password.HeaderText = "Password";
-            this.Password.Name = "Password";
-            // 
-            // PhoneNum
-            // 
-            this.PhoneNum.DataPropertyName = "PhoneNum";
-            this.PhoneNum.HeaderText = "PhoneNum";
-            this.PhoneNum.Name = "PhoneNum";
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
             // 
             // txtMemberName
             // 
@@ -149,7 +119,37 @@
             this.btnNotice.Text = "알림";
             this.btnNotice.UseVisualStyleBackColor = true;
             // 
-            // Admin
+            // MemberId
+            // 
+            this.MemberId.DataPropertyName = "MemberId";
+            this.MemberId.HeaderText = "MemberId";
+            this.MemberId.Name = "MemberId";
+            // 
+            // MemberName
+            // 
+            this.MemberName.DataPropertyName = "MemberName";
+            this.MemberName.HeaderText = "MemberName";
+            this.MemberName.Name = "MemberName";
+            // 
+            // Password
+            // 
+            this.Password.DataPropertyName = "Password";
+            this.Password.HeaderText = "Password";
+            this.Password.Name = "Password";
+            // 
+            // PhoneNum
+            // 
+            this.PhoneNum.DataPropertyName = "PhoneNum";
+            this.PhoneNum.HeaderText = "PhoneNum";
+            this.PhoneNum.Name = "PhoneNum";
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            // 
+            // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -161,7 +161,7 @@
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnSearch);
-            this.Name = "Admin";
+            this.Name = "AdminForm";
             this.Text = "Admin";
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).EndInit();
             this.ResumeLayout(false);
@@ -172,16 +172,16 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvSearch;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UserID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UserName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Password;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PhoneNum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.TextBox txtMemberName;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label lbMemberName;
         private System.Windows.Forms.Button btnNotice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MemberId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MemberName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Password;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PhoneNum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
     }
 }

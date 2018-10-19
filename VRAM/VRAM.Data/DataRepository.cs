@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VRAM.Data
 {
-    class DataRepository
+    public class DataRepository
     {
         #region MemberData
 

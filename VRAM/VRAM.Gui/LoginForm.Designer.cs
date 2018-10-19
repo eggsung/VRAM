@@ -101,7 +101,6 @@
             this.txtMemeberId.Name = "txtMemeberId";
             this.txtMemeberId.Size = new System.Drawing.Size(313, 31);
             this.txtMemeberId.TabIndex = 17;
-            this.txtMemeberId.Text = "Member ID";
             // 
             // txtPassword
             // 
@@ -112,7 +111,6 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(313, 31);
             this.txtPassword.TabIndex = 18;
-            this.txtPassword.Text = "Password";
             // 
             // lbWelcome
             // 
