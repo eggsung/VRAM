@@ -107,5 +107,140 @@ namespace VRAM.Data
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Member_Insert", memberIdParameter, memberNameParameter, passwordParameter, phoneNumParameter, emailParameter);
         }
+    
+        public virtual int Attendance_Delete(string memberId)
+        {
+            var memberIdParameter = memberId != null ?
+                new ObjectParameter("MemberId", memberId) :
+                new ObjectParameter("MemberId", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Attendance_Delete", memberIdParameter);
+        }
+    
+        public virtual ObjectResult<Attendance_Select_Result> Attendance_Select()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Attendance_Select_Result>("Attendance_Select");
+        }
+    
+        public virtual ObjectResult<Attendance_SelectById_Result> Attendance_SelectById(string memberId)
+        {
+            var memberIdParameter = memberId != null ?
+                new ObjectParameter("MemberId", memberId) :
+                new ObjectParameter("MemberId", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Attendance_SelectById_Result>("Attendance_SelectById", memberIdParameter);
+        }
+    
+        public virtual int Attendance_Update(string memberId, Nullable<System.DateTime> date, Nullable<System.TimeSpan> inTime, Nullable<System.TimeSpan> outTime, Nullable<int> status)
+        {
+            var memberIdParameter = memberId != null ?
+                new ObjectParameter("MemberId", memberId) :
+                new ObjectParameter("MemberId", typeof(string));
+    
+            var dateParameter = date.HasValue ?
+                new ObjectParameter("Date", date) :
+                new ObjectParameter("Date", typeof(System.DateTime));
+    
+            var inTimeParameter = inTime.HasValue ?
+                new ObjectParameter("InTime", inTime) :
+                new ObjectParameter("InTime", typeof(System.TimeSpan));
+    
+            var outTimeParameter = outTime.HasValue ?
+                new ObjectParameter("OutTime", outTime) :
+                new ObjectParameter("OutTime", typeof(System.TimeSpan));
+    
+            var statusParameter = status.HasValue ?
+                new ObjectParameter("Status", status) :
+                new ObjectParameter("Status", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Attendance_Update", memberIdParameter, dateParameter, inTimeParameter, outTimeParameter, statusParameter);
+        }
+    
+        public virtual int Board_Delete(Nullable<int> qNum)
+        {
+            var qNumParameter = qNum.HasValue ?
+                new ObjectParameter("QNum", qNum) :
+                new ObjectParameter("QNum", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Board_Delete", qNumParameter);
+        }
+    
+        public virtual ObjectResult<Board_Select_Result> Board_Select()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Board_Select_Result>("Board_Select");
+        }
+    
+        public virtual int Board_Update(string memberId, Nullable<int> qNum, string qcontext, Nullable<System.DateTime> updateDate, string answer)
+        {
+            var memberIdParameter = memberId != null ?
+                new ObjectParameter("MemberId", memberId) :
+                new ObjectParameter("MemberId", typeof(string));
+    
+            var qNumParameter = qNum.HasValue ?
+                new ObjectParameter("QNum", qNum) :
+                new ObjectParameter("QNum", typeof(int));
+    
+            var qcontextParameter = qcontext != null ?
+                new ObjectParameter("Qcontext", qcontext) :
+                new ObjectParameter("Qcontext", typeof(string));
+    
+            var updateDateParameter = updateDate.HasValue ?
+                new ObjectParameter("UpdateDate", updateDate) :
+                new ObjectParameter("UpdateDate", typeof(System.DateTime));
+    
+            var answerParameter = answer != null ?
+                new ObjectParameter("Answer", answer) :
+                new ObjectParameter("Answer", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Board_Update", memberIdParameter, qNumParameter, qcontextParameter, updateDateParameter, answerParameter);
+        }
+    
+        public virtual int Member_Delete(string memberId)
+        {
+            var memberIdParameter = memberId != null ?
+                new ObjectParameter("MemberId", memberId) :
+                new ObjectParameter("MemberId", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Member_Delete", memberIdParameter);
+        }
+    
+        public virtual ObjectResult<Member_Select_Result> Member_Select()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Member_Select_Result>("Member_Select");
+        }
+    
+        public virtual ObjectResult<Member_SelectById_Result> Member_SelectById(string memberId)
+        {
+            var memberIdParameter = memberId != null ?
+                new ObjectParameter("MemberId", memberId) :
+                new ObjectParameter("MemberId", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Member_SelectById_Result>("Member_SelectById", memberIdParameter);
+        }
+    
+        public virtual int Member_Update(string memberId, string memberName, string password, string phoneNum, string email)
+        {
+            var memberIdParameter = memberId != null ?
+                new ObjectParameter("MemberId", memberId) :
+                new ObjectParameter("MemberId", typeof(string));
+    
+            var memberNameParameter = memberName != null ?
+                new ObjectParameter("MemberName", memberName) :
+                new ObjectParameter("MemberName", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("Password", password) :
+                new ObjectParameter("Password", typeof(string));
+    
+            var phoneNumParameter = phoneNum != null ?
+                new ObjectParameter("PhoneNum", phoneNum) :
+                new ObjectParameter("PhoneNum", typeof(string));
+    
+            var emailParameter = email != null ?
+                new ObjectParameter("Email", email) :
+                new ObjectParameter("Email", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Member_Update", memberIdParameter, memberNameParameter, passwordParameter, phoneNumParameter, emailParameter);
+        }
     }
 }

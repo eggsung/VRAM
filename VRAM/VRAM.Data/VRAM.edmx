@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="VRAMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="VRAMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Attendance">
           <Key>
             <PropertyRef Name="MemberId" />
@@ -99,12 +99,29 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="Attendance_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MemberId" Type="nvarchar" Mode="In" />
+        </Function>
         <Function Name="Attendance_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="MemberId" Type="nvarchar" Mode="In" />
           <Parameter Name="Date" Type="date" Mode="In" />
           <Parameter Name="InTime" Type="time" Mode="In" />
           <Parameter Name="OutTime" Type="time" Mode="In" />
           <Parameter Name="Status" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Attendance_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Attendance_SelectById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MemberId" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Attendance_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MemberId" Type="nvarchar" Mode="In" />
+          <Parameter Name="Date" Type="date" Mode="In" />
+          <Parameter Name="InTime" Type="time" Mode="In" />
+          <Parameter Name="OutTime" Type="time" Mode="In" />
+          <Parameter Name="Status" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Board_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="QNum" Type="int" Mode="In" />
         </Function>
         <Function Name="Board_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="MemberId" Type="nvarchar" Mode="In" />
@@ -113,7 +130,29 @@
           <Parameter Name="UpdateDate" Type="date" Mode="In" />
           <Parameter Name="Answer" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="Board_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Board_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MemberId" Type="nvarchar" Mode="In" />
+          <Parameter Name="QNum" Type="int" Mode="In" />
+          <Parameter Name="Qcontext" Type="nvarchar" Mode="In" />
+          <Parameter Name="UpdateDate" Type="date" Mode="In" />
+          <Parameter Name="Answer" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Member_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MemberId" Type="nvarchar" Mode="In" />
+        </Function>
         <Function Name="Member_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MemberId" Type="nvarchar" Mode="In" />
+          <Parameter Name="MemberName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Password" Type="nvarchar" Mode="In" />
+          <Parameter Name="PhoneNum" Type="nvarchar" Mode="In" />
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Member_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Member_SelectById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MemberId" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Member_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="MemberId" Type="nvarchar" Mode="In" />
           <Parameter Name="MemberName" Type="nvarchar" Mode="In" />
           <Parameter Name="Password" Type="nvarchar" Mode="In" />
@@ -143,8 +182,7 @@
             <End Role="MemberRole" EntitySet="MemberRole" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="VRAMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -293,7 +331,82 @@
             <Parameter Name="PhoneNum" Mode="In" Type="String" />
             <Parameter Name="Email" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="Attendance_Delete">
+          <Parameter Name="MemberId" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Attendance_Select" ReturnType="Collection(VRAMModel.Attendance_Select_Result)" />
+          <FunctionImport Name="Attendance_SelectById" ReturnType="Collection(VRAMModel.Attendance_SelectById_Result)">
+          <Parameter Name="MemberId" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Attendance_Update">
+            <Parameter Name="MemberId" Mode="In" Type="String" />
+            <Parameter Name="Date" Mode="In" Type="DateTime" />
+            <Parameter Name="InTime" Mode="In" Type="Time" />
+            <Parameter Name="OutTime" Mode="In" Type="Time" />
+            <Parameter Name="Status" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Board_Delete">
+          <Parameter Name="QNum" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Board_Select" ReturnType="Collection(VRAMModel.Board_Select_Result)" />
+          <FunctionImport Name="Board_Update">
+            <Parameter Name="MemberId" Mode="In" Type="String" />
+            <Parameter Name="QNum" Mode="In" Type="Int32" />
+            <Parameter Name="Qcontext" Mode="In" Type="String" />
+            <Parameter Name="UpdateDate" Mode="In" Type="DateTime" />
+            <Parameter Name="Answer" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Member_Delete">
+          <Parameter Name="MemberId" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Member_Select" ReturnType="Collection(VRAMModel.Member_Select_Result)" />
+          <FunctionImport Name="Member_SelectById" ReturnType="Collection(VRAMModel.Member_SelectById_Result)">
+          <Parameter Name="MemberId" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Member_Update">
+            <Parameter Name="MemberId" Mode="In" Type="String" />
+            <Parameter Name="MemberName" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="PhoneNum" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
+        <ComplexType Name="Attendance_Select_Result">
+          <Property Type="String" Name="MemberId" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="Date" Nullable="false" />
+          <Property Type="Time" Name="InTime" Nullable="false" />
+          <Property Type="Time" Name="OutTime" Nullable="false" />
+          <Property Type="Int32" Name="Status" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="Attendance_SelectById_Result">
+          <Property Type="String" Name="MemberId" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="Date" Nullable="false" />
+          <Property Type="Time" Name="InTime" Nullable="false" />
+          <Property Type="Time" Name="OutTime" Nullable="false" />
+          <Property Type="Int32" Name="Status" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="Board_Select_Result">
+          <Property Type="String" Name="MemberId" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="QNum" Nullable="false" />
+          <Property Type="String" Name="QContext" Nullable="false" MaxLength="300" />
+          <Property Type="DateTime" Name="UpdateDate" Nullable="false" />
+          <Property Type="String" Name="Answer" Nullable="false" MaxLength="1000" />
+          <Property Type="String" Name="QTitle" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="Member_Select_Result">
+          <Property Type="String" Name="MemberId" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="MemberName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="PhoneNum" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="Member_SelectById_Result">
+          <Property Type="String" Name="MemberId" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="MemberName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="PhoneNum" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="50" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -354,6 +467,68 @@
           <FunctionImportMapping FunctionImportName="Attendance_Insert" FunctionName="VRAMModel.Store.Attendance_Insert" />
           <FunctionImportMapping FunctionImportName="Board_Insert" FunctionName="VRAMModel.Store.Board_Insert" />
           <FunctionImportMapping FunctionImportName="Member_Insert" FunctionName="VRAMModel.Store.Member_Insert" />
+          <FunctionImportMapping FunctionImportName="Attendance_Delete" FunctionName="VRAMModel.Store.Attendance_Delete" />
+          <FunctionImportMapping FunctionImportName="Attendance_Select" FunctionName="VRAMModel.Store.Attendance_Select">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="VRAMModel.Attendance_Select_Result">
+                <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="InTime" ColumnName="InTime" />
+                <ScalarProperty Name="OutTime" ColumnName="OutTime" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Attendance_SelectById" FunctionName="VRAMModel.Store.Attendance_SelectById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="VRAMModel.Attendance_SelectById_Result">
+                <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="InTime" ColumnName="InTime" />
+                <ScalarProperty Name="OutTime" ColumnName="OutTime" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Attendance_Update" FunctionName="VRAMModel.Store.Attendance_Update" />
+          <FunctionImportMapping FunctionImportName="Board_Delete" FunctionName="VRAMModel.Store.Board_Delete" />
+          <FunctionImportMapping FunctionImportName="Board_Select" FunctionName="VRAMModel.Store.Board_Select">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="VRAMModel.Board_Select_Result">
+                <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+                <ScalarProperty Name="QNum" ColumnName="QNum" />
+                <ScalarProperty Name="QContext" ColumnName="QContext" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="Answer" ColumnName="Answer" />
+                <ScalarProperty Name="QTitle" ColumnName="QTitle" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Board_Update" FunctionName="VRAMModel.Store.Board_Update" />
+          <FunctionImportMapping FunctionImportName="Member_Delete" FunctionName="VRAMModel.Store.Member_Delete" />
+          <FunctionImportMapping FunctionImportName="Member_Select" FunctionName="VRAMModel.Store.Member_Select">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="VRAMModel.Member_Select_Result">
+                <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+                <ScalarProperty Name="MemberName" ColumnName="MemberName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="PhoneNum" ColumnName="PhoneNum" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Member_SelectById" FunctionName="VRAMModel.Store.Member_SelectById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="VRAMModel.Member_SelectById_Result">
+                <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+                <ScalarProperty Name="MemberName" ColumnName="MemberName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="PhoneNum" ColumnName="PhoneNum" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Member_Update" FunctionName="VRAMModel.Store.Member_Update" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
