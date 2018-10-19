@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.dgvSearch = new System.Windows.Forms.DataGridView();
+            this.MemberId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MemberName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtMemberName = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.lbMemberName = new System.Windows.Forms.Label();
             this.btnNotice = new System.Windows.Forms.Button();
-            this.MemberId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MemberName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PhoneNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,6 +58,36 @@
             this.dgvSearch.Size = new System.Drawing.Size(745, 317);
             this.dgvSearch.TabIndex = 10;
             this.dgvSearch.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSearch_CellContentClick);
+            // 
+            // MemberId
+            // 
+            this.MemberId.DataPropertyName = "MemberId";
+            this.MemberId.HeaderText = "MemberId";
+            this.MemberId.Name = "MemberId";
+            // 
+            // MemberName
+            // 
+            this.MemberName.DataPropertyName = "MemberName";
+            this.MemberName.HeaderText = "MemberName";
+            this.MemberName.Name = "MemberName";
+            // 
+            // Password
+            // 
+            this.Password.DataPropertyName = "Password";
+            this.Password.HeaderText = "Password";
+            this.Password.Name = "Password";
+            // 
+            // PhoneNum
+            // 
+            this.PhoneNum.DataPropertyName = "PhoneNum";
+            this.PhoneNum.HeaderText = "PhoneNum";
+            this.PhoneNum.Name = "PhoneNum";
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
             // 
             // txtMemberName
             // 
@@ -120,36 +150,6 @@
             this.btnNotice.Text = "알림";
             this.btnNotice.UseVisualStyleBackColor = true;
             // 
-            // MemberId
-            // 
-            this.MemberId.DataPropertyName = "MemberId";
-            this.MemberId.HeaderText = "MemberId";
-            this.MemberId.Name = "MemberId";
-            // 
-            // MemberName
-            // 
-            this.MemberName.DataPropertyName = "MemberName";
-            this.MemberName.HeaderText = "MemberName";
-            this.MemberName.Name = "MemberName";
-            // 
-            // Password
-            // 
-            this.Password.DataPropertyName = "Password";
-            this.Password.HeaderText = "Password";
-            this.Password.Name = "Password";
-            // 
-            // PhoneNum
-            // 
-            this.PhoneNum.DataPropertyName = "PhoneNum";
-            this.PhoneNum.HeaderText = "PhoneNum";
-            this.PhoneNum.Name = "PhoneNum";
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -164,6 +164,7 @@
             this.Controls.Add(this.btnSearch);
             this.Name = "AdminForm";
             this.Text = "Admin";
+            this.Load += new System.EventHandler(this.AdminForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

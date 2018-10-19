@@ -36,11 +36,31 @@ namespace VRAM.Gui
                 dgvSearch.AutoGenerateColumns = false;
                 //List<Member> list = db.Members.ToList();
                 string Searchname= txtMemberName.Text.Trim();
-                List<Member> list = db.Members.SqlQuery("SELECT * FROM Member WHERE MemberName = '" + Searchname + "'").ToList();
-                dgvSearch.DataSource = list;
+                if (Searchname.Equals(""))
+                {
+                    MessageBox.Show("이름을 적지 않았습니다.");
+                }
+                else
+                {
+                    List<Member> list = db.Members.SqlQuery("SELECT * FROM Member WHERE MemberName = '" + Searchname + "'").ToList();
+                    dgvSearch.DataSource = list;
+                    
+                }
+
+
             }
 
             
+        }
+
+        private void AdminForm_Load(object sender, EventArgs e)
+        {
+            using (VRAMEntities db = new VRAMEntities())
+            {
+                dgvSearch.AutoGenerateColumns = false;
+                List<Member> list = db.Members.SqlQuery("SELECT * FROM Member").ToList();
+                dgvSearch.DataSource = list;
+            }
         }
     }
 }
