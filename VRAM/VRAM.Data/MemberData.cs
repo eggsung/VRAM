@@ -9,7 +9,7 @@ namespace VRAM.Data
 {
     public class MemberData : EntityData<Member>
     {
-        public static List<string> GetMemberId()
+        public static List<String> GetMemberId()
         {
             var context = CreateContext();
 
@@ -30,7 +30,7 @@ namespace VRAM.Data
             return query.ToString();
         }
 
-        public static List<string> GetMemberPassword()
+        public static List<String> GetMemberPassword()
         {
             var context = CreateContext();
 

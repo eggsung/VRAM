@@ -20,55 +20,44 @@ namespace VRAM.Gui
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            RegisterForm registerFrForm = new RegisterForm();
-            registerFrForm.ShowDialog();
+            RegisterForm registerForm = new RegisterForm();
+            registerForm.ShowDialog();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
 
-            BoardForm boardForm = new BoardForm();
-
-            // 로그인 기능 구현 
-            List<string> IdList = MemberData.GetMemberId();
-            List<string> PwList = MemberData.GetMemberPassword();
-
-            foreach (var Id in IdList)
-            {
-                foreach (var Pw in PwList)
-                {
-                    CheckLogin(Id, Pw);
-                }
-            }
-
-            void CheckLogin(string id, string pw)
-            {
-
-                if (id == txtMemeberId.Text && pw == txtPassword.Text)
-                {
-                    Credential.Instance.Load(txtMemeberId.Text);
-                    if (Credential.Instance.HasRole("Admin"))
-                    {
-                        Show(new AdminForm());
+        if (txtMemeberId.Text == "" || txtPassword.Text == "")
+           {
+               MessageBox.Show("Please provide MemberId and Password");
+               return;
+           }
+           try
+           {
+              
+               if (MemberData.GetMemberId().Contains(txtMemeberId.Text) && MemberData.GetMemberPassword().Contains(txtPassword.Text))
+               {
+                   Credential.Instance.Load(txtMemeberId.Text);
+                        MessageBox.Show("Login Successful!");
+                        this.Hide();
+                        BoardForm boardForm = new BoardForm();
+                        boardForm.ShowDialog();
+                        this.Close();
                     }
                     else
                     {
-                        Show(new BoardForm());
+                        MessageBox.Show("Login Failed!");
                     }
-
-                    this.Visible = false;
-                    boardForm.ShowDialog();
-
                 }
-
-                this.Close();
-
-            }
-        }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+           }
     }
 }
