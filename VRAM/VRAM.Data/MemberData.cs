@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VRAM.Cui
+namespace VRAM.Data
 {
-    class Program
+    public class MemberData : EntityData<Member>
     {
-        static void Main(string[] args)
-        {
-        }
+
     }
 }

@@ -95,20 +95,24 @@
             // txtMemeberId
             // 
             this.txtMemeberId.Font = new System.Drawing.Font("Consolas", 12F);
+            this.txtMemeberId.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.txtMemeberId.Location = new System.Drawing.Point(200, 170);
             this.txtMemeberId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMemeberId.Name = "txtMemeberId";
             this.txtMemeberId.Size = new System.Drawing.Size(313, 31);
             this.txtMemeberId.TabIndex = 17;
+            this.txtMemeberId.Text = "Member ID";
             // 
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Consolas", 12F);
+            this.txtPassword.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.txtPassword.Location = new System.Drawing.Point(200, 231);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(313, 31);
             this.txtPassword.TabIndex = 18;
+            this.txtPassword.Text = "Password";
             // 
             // lbWelcome
             // 
@@ -130,7 +134,7 @@
             this.label2.TabIndex = 23;
             this.label2.Text = "Login to get Started!";
             // 
-            // Login
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -144,7 +148,7 @@
             this.Controls.Add(this.txtMemeberId);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label1);
-            this.Name = "Login";
+            this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Welcome";
             this.Load += new System.EventHandler(this.LoginForm_Load);

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VRAM.Data
 {
-    public class Class1
+    public class AttendanceData : EntityData<Attendance>
     {
     }
 }
