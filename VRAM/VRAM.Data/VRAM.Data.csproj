@@ -40,8 +40,10 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,6 +55,7 @@
     <Compile Include="Attendance.cs">
       <DependentUpon>VRAM.tt</DependentUpon>
     </Compile>
+    <Compile Include="AttendanceData.cs" />
     <Compile Include="Attendance_SelectById_Result.cs">
       <DependentUpon>VRAM.tt</DependentUpon>
     </Compile>
@@ -62,11 +65,12 @@
     <Compile Include="Board.cs">
       <DependentUpon>VRAM.tt</DependentUpon>
     </Compile>
+    <Compile Include="BoardData.cs" />
     <Compile Include="Board_Select_Result.cs">
       <DependentUpon>VRAM.tt</DependentUpon>
     </Compile>
     <Compile Include="Credential.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="DataRepository.cs" />
     <Compile Include="EntityData.cs" />
     <Compile Include="Member.cs">
       <DependentUpon>VRAM.tt</DependentUpon>

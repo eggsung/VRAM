@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace VRAM.Data
 {
-    public class Class1
+    public class AttendanceData : EntityData<Attendance>
     {
-       
     }
 }
