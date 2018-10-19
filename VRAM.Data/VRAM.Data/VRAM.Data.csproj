@@ -53,7 +53,16 @@
     <Compile Include="Attendance.cs">
       <DependentUpon>VRAM.tt</DependentUpon>
     </Compile>
+    <Compile Include="Attendance_SelectById_Result.cs">
+      <DependentUpon>VRAM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Attendance_Select_Result.cs">
+      <DependentUpon>VRAM.tt</DependentUpon>
+    </Compile>
     <Compile Include="Board.cs">
+      <DependentUpon>VRAM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Board_Select_Result.cs">
       <DependentUpon>VRAM.tt</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
@@ -61,6 +70,12 @@
       <DependentUpon>VRAM.tt</DependentUpon>
     </Compile>
     <Compile Include="MemberRole.cs">
+      <DependentUpon>VRAM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Member_SelectById_Result.cs">
+      <DependentUpon>VRAM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Member_Select_Result.cs">
       <DependentUpon>VRAM.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

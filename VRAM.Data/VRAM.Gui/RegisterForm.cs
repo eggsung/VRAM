@@ -17,5 +17,9 @@ namespace VRAM.Gui
             InitializeComponent();
         }
 
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
