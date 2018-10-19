@@ -28,8 +28,7 @@ namespace VRAM.Gui
         private void btnAdmin_Click(object sender, EventArgs e)
         {
             AdminForm adminForm = new AdminForm();
-            adminForm.Show();
-           
+            adminForm.Show();        
         }
     }
 }
