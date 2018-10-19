@@ -46,6 +46,7 @@
             this.btnWriteSend.TabIndex = 13;
             this.btnWriteSend.Text = "전송(&S)";
             this.btnWriteSend.UseVisualStyleBackColor = true;
+            this.btnWriteSend.Click += new System.EventHandler(this.btnWriteSend_Click);
             // 
             // txt_Wr_Page
             // 
@@ -104,7 +105,7 @@
             this.lbWriter.TabIndex = 7;
             this.lbWriter.Text = "작성자";
             // 
-            // Write
+            // WriteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -116,7 +117,7 @@
             this.Controls.Add(this.lbWriteTitle);
             this.Controls.Add(this.txtWriter);
             this.Controls.Add(this.lbWriter);
-            this.Name = "Write";
+            this.Name = "WriteForm";
             this.Text = "Write";
             this.ResumeLayout(false);
             this.PerformLayout();
