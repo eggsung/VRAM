@@ -39,23 +39,17 @@ namespace VRAM.Data
 
         private HashSet<String> _roleNames = new HashSet<string>();
 
-        public Member member { get; private set; }
-
         public bool HasRole(string role)
         {
             return _roleNames.Contains(role);
         }
 
-        public void Load(Member member)
+        public void Load(String memberId)
         {
-            Member m = member;
-            Role r = new Role();
-            List<Role> roles = new List<Role>();
-            
-
+            List<Role> roles = RoleData.GetOwnRoles(memberId);
             foreach (var role in roles)
             {
-                _roleNames.Add(r.RoleName);
+                _roleNames.Add(role.RoleName);
 
             }
         }

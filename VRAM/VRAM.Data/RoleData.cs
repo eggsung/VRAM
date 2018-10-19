@@ -5,7 +5,7 @@ namespace VRAM.Data
 {
     public class RoleData : EntityData<Role>
     {
-        public List<Role> GetOwnRoles(string memberId)
+        public static List<Role> GetOwnRoles(string memberId)
         {
             var context = CreateContext();
 

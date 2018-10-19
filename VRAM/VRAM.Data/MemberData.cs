@@ -7,19 +7,19 @@ using System.Threading.Tasks;
 
 namespace VRAM.Data
 {
-    public class MemberData : EntityData<Member>
+    public class MemberData<T> : EntityData<Member>
     {
         
        
         public Member SelectById(String entityId)
         {
-            return Context.Members.First(x => x.MemberId.Equals(entityId));
+           // return CreateContext().Set<T>().First(x => x.MemberId.Equals(entityId);
         }
 
         
         public Member GetLast()
         {
-            return Context.Members.OrderByDescending(x => x.MemberId).First();
+           // return Context.Members.OrderByDescending(x => x.MemberId).First();
         }
     }
 }

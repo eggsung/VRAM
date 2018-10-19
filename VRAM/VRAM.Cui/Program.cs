@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Reflection;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,8 +33,10 @@ namespace VRAM.Cui
                 
             }
 
-            // 로그인 성공
-            Credential.Instance.Load();
+          
+            Credential.Instance.Load("akjd882");
+
+            MemberInfoData.GetMemberInfo("akjd882");
 
         }
 

@@ -72,6 +72,7 @@
       <DependentUpon>VRAM.tt</DependentUpon>
     </Compile>
     <Compile Include="MemberData.cs" />
+    <Compile Include="MemberInfoData.cs" />
     <Compile Include="MemberRole.cs">
       <DependentUpon>VRAM.tt</DependentUpon>
     </Compile>

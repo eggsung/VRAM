@@ -11,11 +11,9 @@ namespace VRAM.Data
     public class EntityData<T> where T : class
     {
 
-        #region context things
-
-
-        protected VRAMEntities CreateContext()
-        {
+        protected static VRAMEntities CreateContext()
+        { 
+        
             var context = new VRAMEntities();
             context.Database.Log = PrintSql;
 
@@ -26,8 +24,6 @@ namespace VRAM.Data
         {
             Debug.WriteLine(sql);
         }
-
-        #endregion
 
         public int GetCount()
         {
