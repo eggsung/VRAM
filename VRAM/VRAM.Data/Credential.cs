@@ -37,6 +37,8 @@ namespace VRAM.Data
         }
         #endregion
 
+
+
         private HashSet<String> _roleNames = new HashSet<string>();
 
         public bool HasRole(string role)
@@ -54,7 +56,7 @@ namespace VRAM.Data
             }
         }
 
-
+        
 
     }
 }

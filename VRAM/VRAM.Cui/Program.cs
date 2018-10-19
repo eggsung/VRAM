@@ -14,10 +14,8 @@ namespace VRAM.Cui
     {
         static void Main(string[] args)
         {
-           
-           
-        }
 
-        
+        }
+                 
     }
 }

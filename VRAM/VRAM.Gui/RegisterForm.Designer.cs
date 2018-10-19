@@ -33,8 +33,8 @@
             this.btnRegister = new System.Windows.Forms.Button();
             this.lbTitle = new System.Windows.Forms.Label();
             this.CtrlPanel = new System.Windows.Forms.Panel();
-            this.lbMemberId = new System.Windows.Forms.Label();
             this.txtMemberId = new System.Windows.Forms.TextBox();
+            this.lbMemberId = new System.Windows.Forms.Label();
             this.CtrlPanel2 = new System.Windows.Forms.Panel();
             this.txtMemberName = new System.Windows.Forms.TextBox();
             this.lbMemberName = new System.Windows.Forms.Label();
@@ -91,6 +91,7 @@
             this.btnRegister.TabIndex = 33;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // lbTitle
             // 
@@ -114,6 +115,13 @@
             this.CtrlPanel.Size = new System.Drawing.Size(543, 48);
             this.CtrlPanel.TabIndex = 44;
             // 
+            // txtMemberId
+            // 
+            this.txtMemberId.Location = new System.Drawing.Point(148, 13);
+            this.txtMemberId.Name = "txtMemberId";
+            this.txtMemberId.Size = new System.Drawing.Size(394, 29);
+            this.txtMemberId.TabIndex = 1;
+            // 
             // lbMemberId
             // 
             this.lbMemberId.AutoSize = true;
@@ -122,13 +130,6 @@
             this.lbMemberId.Size = new System.Drawing.Size(90, 22);
             this.lbMemberId.TabIndex = 0;
             this.lbMemberId.Text = "MemberID";
-            // 
-            // txtMemberId
-            // 
-            this.txtMemberId.Location = new System.Drawing.Point(148, 13);
-            this.txtMemberId.Name = "txtMemberId";
-            this.txtMemberId.Size = new System.Drawing.Size(394, 29);
-            this.txtMemberId.TabIndex = 1;
             // 
             // CtrlPanel2
             // 
@@ -240,8 +241,9 @@
             this.btnReset.TabIndex = 47;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-            // Register
+            // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -258,7 +260,7 @@
             this.Controls.Add(this.lbTitle);
             this.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Register";
+            this.Name = "RegisterForm";
             this.Text = "Register";
             this.CtrlPanel.ResumeLayout(false);
             this.CtrlPanel.PerformLayout();
