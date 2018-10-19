@@ -30,7 +30,6 @@
         {
             this.btnWriteSend = new System.Windows.Forms.Button();
             this.txt_Wr_Page = new System.Windows.Forms.TextBox();
-            this.chbSecret = new System.Windows.Forms.CheckBox();
             this.txtWriteTitle = new System.Windows.Forms.TextBox();
             this.lbWriteTitle = new System.Windows.Forms.Label();
             this.txtWriter = new System.Windows.Forms.TextBox();
@@ -55,17 +54,6 @@
             this.txt_Wr_Page.Name = "txt_Wr_Page";
             this.txt_Wr_Page.Size = new System.Drawing.Size(381, 276);
             this.txt_Wr_Page.TabIndex = 12;
-            // 
-            // chbSecret
-            // 
-            this.chbSecret.AutoSize = true;
-            this.chbSecret.Font = new System.Drawing.Font("Consolas", 12F);
-            this.chbSecret.Location = new System.Drawing.Point(336, 25);
-            this.chbSecret.Name = "chbSecret";
-            this.chbSecret.Size = new System.Drawing.Size(77, 27);
-            this.chbSecret.TabIndex = 11;
-            this.chbSecret.Text = "비밀글";
-            this.chbSecret.UseVisualStyleBackColor = true;
             // 
             // txtWriteTitle
             // 
@@ -104,19 +92,18 @@
             this.lbWriter.TabIndex = 7;
             this.lbWriter.Text = "작성자";
             // 
-            // Write
+            // WriteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(459, 462);
             this.Controls.Add(this.btnWriteSend);
             this.Controls.Add(this.txt_Wr_Page);
-            this.Controls.Add(this.chbSecret);
             this.Controls.Add(this.txtWriteTitle);
             this.Controls.Add(this.lbWriteTitle);
             this.Controls.Add(this.txtWriter);
             this.Controls.Add(this.lbWriter);
-            this.Name = "Write";
+            this.Name = "WriteForm";
             this.Text = "Write";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -127,7 +114,6 @@
 
         private System.Windows.Forms.Button btnWriteSend;
         private System.Windows.Forms.TextBox txt_Wr_Page;
-        private System.Windows.Forms.CheckBox chbSecret;
         private System.Windows.Forms.TextBox txtWriteTitle;
         private System.Windows.Forms.Label lbWriteTitle;
         private System.Windows.Forms.TextBox txtWriter;

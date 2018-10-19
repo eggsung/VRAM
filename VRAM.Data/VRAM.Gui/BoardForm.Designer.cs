@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbBoard = new System.Windows.Forms.Label();
+            this.lbl_Board = new System.Windows.Forms.Label();
             this.btnAdmin = new System.Windows.Forms.Button();
             this.tabMenus = new System.Windows.Forms.TabControl();
             this.t_Qlist = new System.Windows.Forms.TabPage();
@@ -41,6 +41,8 @@
             this.t_AttSit = new System.Windows.Forms.TabPage();
             this.db_AttSit = new System.Windows.Forms.DataGridView();
             this.btnEntry = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.tabMenus.SuspendLayout();
             this.t_Qlist.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.db_Qlist)).BeginInit();
@@ -50,21 +52,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.db_AttSit)).BeginInit();
             this.SuspendLayout();
             // 
-            // lbBoard
+            // lbl_Board
             // 
-            this.lbBoard.AutoSize = true;
-            this.lbBoard.Font = new System.Drawing.Font("Consolas", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBoard.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lbBoard.Location = new System.Drawing.Point(32, 26);
-            this.lbBoard.Name = "lbBoard";
-            this.lbBoard.Size = new System.Drawing.Size(141, 56);
-            this.lbBoard.TabIndex = 7;
-            this.lbBoard.Text = "게시판";
+            this.lbl_Board.AutoSize = true;
+            this.lbl_Board.Font = new System.Drawing.Font("Consolas", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Board.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lbl_Board.Location = new System.Drawing.Point(32, 26);
+            this.lbl_Board.Name = "lbl_Board";
+            this.lbl_Board.Size = new System.Drawing.Size(141, 56);
+            this.lbl_Board.TabIndex = 7;
+            this.lbl_Board.Text = "게시판";
             // 
             // btnAdmin
             // 
             this.btnAdmin.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdmin.Location = new System.Drawing.Point(677, 40);
+            this.btnAdmin.Location = new System.Drawing.Point(575, 41);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Size = new System.Drawing.Size(103, 42);
             this.btnAdmin.TabIndex = 6;
@@ -83,6 +85,7 @@
             this.tabMenus.SelectedIndex = 0;
             this.tabMenus.Size = new System.Drawing.Size(776, 324);
             this.tabMenus.TabIndex = 5;
+            this.tabMenus.SelectedIndexChanged += new System.EventHandler(this.tabMenus_SelectedIndexChanged);
             // 
             // t_Qlist
             // 
@@ -184,23 +187,45 @@
             // btnEntry
             // 
             this.btnEntry.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEntry.Location = new System.Drawing.Point(554, 41);
+            this.btnEntry.Location = new System.Drawing.Point(466, 41);
             this.btnEntry.Name = "btnEntry";
             this.btnEntry.Size = new System.Drawing.Size(103, 42);
             this.btnEntry.TabIndex = 4;
             this.btnEntry.Text = "입/퇴실";
             this.btnEntry.UseVisualStyleBackColor = true;
             // 
-            // Board
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(357, 41);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(103, 42);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "입/퇴실";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(684, 41);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(103, 42);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "관리";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // BoardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 465);
-            this.Controls.Add(this.lbBoard);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.lbl_Board);
             this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.tabMenus);
             this.Controls.Add(this.btnEntry);
-            this.Name = "Board";
+            this.Name = "BoardForm";
             this.Text = "Board";
             this.tabMenus.ResumeLayout(false);
             this.t_Qlist.ResumeLayout(false);
@@ -216,7 +241,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lbBoard;
+        private System.Windows.Forms.Label lbl_Board;
         private System.Windows.Forms.Button btnAdmin;
         private System.Windows.Forms.TabControl tabMenus;
         private System.Windows.Forms.TabPage t_Qlist;
@@ -229,5 +254,7 @@
         private System.Windows.Forms.TabPage t_AttSit;
         private System.Windows.Forms.DataGridView db_AttSit;
         private System.Windows.Forms.Button btnEntry;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
