@@ -15,19 +15,8 @@ namespace VRAM.Data
         { 
         
             var context = new VRAMEntities();
-            context.Database.Log = PrintSql;
 
             return context;
-        }
-
-        private static void PrintSql(String sql)
-        {
-            Debug.WriteLine(sql);
-        }
-
-        public int GetCount()
-        {
-            return CreateContext().Set<T>().Count();
         }
 
         public List<T> Select()
@@ -37,7 +26,9 @@ namespace VRAM.Data
 
         public void Insert(T entity)
         {
-            CreateContext().Set<T>().Add(entity);
+            var context = CreateContext();
+            context.Entry(entity).State = EntityState.Added;
+            context.SaveChanges();
         }
 
         public void Update(T entity)

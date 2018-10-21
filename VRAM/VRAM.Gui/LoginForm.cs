@@ -20,44 +20,50 @@ namespace VRAM.Gui
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            
+
         }
 
+        // 등록
         private void btnRegister_Click(object sender, EventArgs e)
         {
             RegisterForm registerForm = new RegisterForm();
             registerForm.ShowDialog();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
 
-        if (txtMemeberId.Text == "" || txtPassword.Text == "")
-           {
-               MessageBox.Show("Please provide MemberId and Password");
-               return;
-           }
-           try
-           {
-              
-               if (MemberData.GetMemberId().Contains(txtMemeberId.Text) && MemberData.GetMemberPassword().Contains(txtPassword.Text))
-               {
-                   Credential.Instance.Load(txtMemeberId.Text);
-                        MessageBox.Show("Login Successful!");
-                        this.Hide();
-                        BoardForm boardForm = new BoardForm();
-                        boardForm.ShowDialog();
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Login Failed!");
-                    }
-                }
-                catch (Exception ex)
+        // 로그인
+        private void btnLogin_Click(object sender, EventArgs e)
+        {           
+            if (txtMemeberId.Text != "" && txtPassword.Text != "")
+            {
+                // 로그인 성공
+                if (MemberData.GetMemberId().Contains(txtMemeberId.Text) &&
+                    MemberData.GetMemberPassword().Contains(txtPassword.Text))
                 {
-                    MessageBox.Show(ex.Message);
+                    this.Hide();
+                    BoardForm boardForm = new BoardForm();
+                    boardForm.ShowDialog();
+                    this.Close();
                 }
-           }
+                
+                // 아이디만 일치
+                else if (MemberData.GetMemberId().Contains(txtMemeberId.Text))
+
+                {
+                    MessageBox.Show("비밀번호를 다시 확인해주세요.");
+                }
+
+                // 회원이 아닐 경우
+                else
+                {
+                    MessageBox.Show("회원이 아닙니다.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("ID와 Password를 입력해주세요.");
+             
+            }
+        }
     }
 }

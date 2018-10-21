@@ -63,8 +63,5 @@ namespace VRAM.Data
 
             }
         }
-
-        
-
     }
 }

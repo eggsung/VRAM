@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnWriteSend = new System.Windows.Forms.Button();
-            this.txt_Wr_Page = new System.Windows.Forms.TextBox();
+            this.txtWritePage = new System.Windows.Forms.TextBox();
             this.chbSecret = new System.Windows.Forms.CheckBox();
             this.txtWriteTitle = new System.Windows.Forms.TextBox();
             this.lbWriteTitle = new System.Windows.Forms.Label();
@@ -48,14 +48,14 @@
             this.btnWriteSend.UseVisualStyleBackColor = true;
             this.btnWriteSend.Click += new System.EventHandler(this.btnWriteSend_Click);
             // 
-            // txt_Wr_Page
+            // txtWritePage
             // 
-            this.txt_Wr_Page.Font = new System.Drawing.Font("Consolas", 12F);
-            this.txt_Wr_Page.Location = new System.Drawing.Point(32, 117);
-            this.txt_Wr_Page.Multiline = true;
-            this.txt_Wr_Page.Name = "txt_Wr_Page";
-            this.txt_Wr_Page.Size = new System.Drawing.Size(381, 276);
-            this.txt_Wr_Page.TabIndex = 12;
+            this.txtWritePage.Font = new System.Drawing.Font("Consolas", 12F);
+            this.txtWritePage.Location = new System.Drawing.Point(32, 117);
+            this.txtWritePage.Multiline = true;
+            this.txtWritePage.Name = "txtWritePage";
+            this.txtWritePage.Size = new System.Drawing.Size(381, 276);
+            this.txtWritePage.TabIndex = 12;
             // 
             // chbSecret
             // 
@@ -111,7 +111,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(459, 462);
             this.Controls.Add(this.btnWriteSend);
-            this.Controls.Add(this.txt_Wr_Page);
+            this.Controls.Add(this.txtWritePage);
             this.Controls.Add(this.chbSecret);
             this.Controls.Add(this.txtWriteTitle);
             this.Controls.Add(this.lbWriteTitle);
@@ -127,7 +127,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnWriteSend;
-        private System.Windows.Forms.TextBox txt_Wr_Page;
+        private System.Windows.Forms.TextBox txtWritePage;
         private System.Windows.Forms.CheckBox chbSecret;
         private System.Windows.Forms.TextBox txtWriteTitle;
         private System.Windows.Forms.Label lbWriteTitle;

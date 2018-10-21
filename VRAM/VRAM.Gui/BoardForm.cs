@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using VRAM.Data;
 
 namespace VRAM.Gui
 {
@@ -16,17 +15,9 @@ namespace VRAM.Gui
         public BoardForm()
         {
             InitializeComponent();
-            if (Credential.Instance.HasRole("Admin"))
-            {
-                MessageBox.Show("관리");
-            }
-            else
-            {
-                MessageBox.Show("회원");
-            }
         }
 
-  
+
 
         private void btnWrite_Click(object sender, EventArgs e)
         {
@@ -38,9 +29,7 @@ namespace VRAM.Gui
         {
             AdminForm adminForm = new AdminForm();
             adminForm.Show();
-           
 
-            
         }
     }
 }

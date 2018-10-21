@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.rbMember = new System.Windows.Forms.RadioButton();
-            this.rbAdmin = new System.Windows.Forms.RadioButton();
             this.btnRegister = new System.Windows.Forms.Button();
             this.lbTitle = new System.Windows.Forms.Label();
             this.CtrlPanel = new System.Windows.Forms.Panel();
@@ -55,36 +53,10 @@
             this.CtrlPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
-            // rbMember
-            // 
-            this.rbMember.AutoSize = true;
-            this.rbMember.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbMember.Location = new System.Drawing.Point(395, 106);
-            this.rbMember.Margin = new System.Windows.Forms.Padding(4);
-            this.rbMember.Name = "rbMember";
-            this.rbMember.Size = new System.Drawing.Size(91, 26);
-            this.rbMember.TabIndex = 43;
-            this.rbMember.TabStop = true;
-            this.rbMember.Text = "Member";
-            this.rbMember.UseVisualStyleBackColor = true;
-            // 
-            // rbAdmin
-            // 
-            this.rbAdmin.AutoSize = true;
-            this.rbAdmin.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbAdmin.Location = new System.Drawing.Point(149, 106);
-            this.rbAdmin.Margin = new System.Windows.Forms.Padding(4);
-            this.rbAdmin.Name = "rbAdmin";
-            this.rbAdmin.Size = new System.Drawing.Size(81, 26);
-            this.rbAdmin.TabIndex = 42;
-            this.rbAdmin.TabStop = true;
-            this.rbAdmin.Text = "Admin";
-            this.rbAdmin.UseVisualStyleBackColor = true;
-            // 
             // btnRegister
             // 
             this.btnRegister.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegister.Location = new System.Drawing.Point(395, 468);
+            this.btnRegister.Location = new System.Drawing.Point(395, 400);
             this.btnRegister.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(205, 56);
@@ -110,7 +82,7 @@
             // 
             this.CtrlPanel.Controls.Add(this.txtMemberId);
             this.CtrlPanel.Controls.Add(this.lbMemberId);
-            this.CtrlPanel.Location = new System.Drawing.Point(58, 168);
+            this.CtrlPanel.Location = new System.Drawing.Point(58, 100);
             this.CtrlPanel.Name = "CtrlPanel";
             this.CtrlPanel.Size = new System.Drawing.Size(543, 48);
             this.CtrlPanel.TabIndex = 44;
@@ -135,7 +107,7 @@
             // 
             this.CtrlPanel2.Controls.Add(this.txtMemberName);
             this.CtrlPanel2.Controls.Add(this.lbMemberName);
-            this.CtrlPanel2.Location = new System.Drawing.Point(58, 222);
+            this.CtrlPanel2.Location = new System.Drawing.Point(58, 154);
             this.CtrlPanel2.Name = "CtrlPanel2";
             this.CtrlPanel2.Size = new System.Drawing.Size(543, 48);
             this.CtrlPanel2.TabIndex = 45;
@@ -160,7 +132,7 @@
             // 
             this.CtrlPanel3.Controls.Add(this.txtPhoneNum);
             this.CtrlPanel3.Controls.Add(this.lbPhoneNum);
-            this.CtrlPanel3.Location = new System.Drawing.Point(58, 276);
+            this.CtrlPanel3.Location = new System.Drawing.Point(58, 208);
             this.CtrlPanel3.Name = "CtrlPanel3";
             this.CtrlPanel3.Size = new System.Drawing.Size(543, 48);
             this.CtrlPanel3.TabIndex = 46;
@@ -185,7 +157,7 @@
             // 
             this.CtrlPanel4.Controls.Add(this.txtEmail);
             this.CtrlPanel4.Controls.Add(this.lbEmail);
-            this.CtrlPanel4.Location = new System.Drawing.Point(58, 330);
+            this.CtrlPanel4.Location = new System.Drawing.Point(58, 262);
             this.CtrlPanel4.Name = "CtrlPanel4";
             this.CtrlPanel4.Size = new System.Drawing.Size(543, 48);
             this.CtrlPanel4.TabIndex = 46;
@@ -210,7 +182,7 @@
             // 
             this.CtrlPanel5.Controls.Add(this.txtPassword);
             this.CtrlPanel5.Controls.Add(this.lbPassword);
-            this.CtrlPanel5.Location = new System.Drawing.Point(58, 393);
+            this.CtrlPanel5.Location = new System.Drawing.Point(58, 325);
             this.CtrlPanel5.Name = "CtrlPanel5";
             this.CtrlPanel5.Size = new System.Drawing.Size(543, 48);
             this.CtrlPanel5.TabIndex = 46;
@@ -234,7 +206,7 @@
             // btnReset
             // 
             this.btnReset.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(58, 468);
+            this.btnReset.Location = new System.Drawing.Point(58, 400);
             this.btnReset.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(205, 56);
@@ -247,15 +219,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(660, 554);
+            this.ClientSize = new System.Drawing.Size(660, 479);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.CtrlPanel5);
             this.Controls.Add(this.CtrlPanel4);
             this.Controls.Add(this.CtrlPanel3);
             this.Controls.Add(this.CtrlPanel2);
             this.Controls.Add(this.CtrlPanel);
-            this.Controls.Add(this.rbMember);
-            this.Controls.Add(this.rbAdmin);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.lbTitle);
             this.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -278,9 +248,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.RadioButton rbMember;
-        private System.Windows.Forms.RadioButton rbAdmin;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.Panel CtrlPanel;

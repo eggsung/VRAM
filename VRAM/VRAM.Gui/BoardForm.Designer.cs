@@ -55,7 +55,7 @@
             this.lbBoard.AutoSize = true;
             this.lbBoard.Font = new System.Drawing.Font("Consolas", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbBoard.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lbBoard.Location = new System.Drawing.Point(32, 26);
+            this.lbBoard.Location = new System.Drawing.Point(32, 31);
             this.lbBoard.Name = "lbBoard";
             this.lbBoard.Size = new System.Drawing.Size(141, 56);
             this.lbBoard.TabIndex = 7;
@@ -64,9 +64,10 @@
             // btnAdmin
             // 
             this.btnAdmin.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdmin.Location = new System.Drawing.Point(677, 40);
+            this.btnAdmin.Location = new System.Drawing.Point(677, 48);
+            this.btnAdmin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(103, 42);
+            this.btnAdmin.Size = new System.Drawing.Size(103, 50);
             this.btnAdmin.TabIndex = 6;
             this.btnAdmin.Text = "관리";
             this.btnAdmin.UseVisualStyleBackColor = true;
@@ -78,10 +79,11 @@
             this.tabMenus.Controls.Add(this.t_MQlist);
             this.tabMenus.Controls.Add(this.t_AttSit);
             this.tabMenus.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabMenus.Location = new System.Drawing.Point(15, 116);
+            this.tabMenus.Location = new System.Drawing.Point(15, 139);
+            this.tabMenus.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabMenus.Name = "tabMenus";
             this.tabMenus.SelectedIndex = 0;
-            this.tabMenus.Size = new System.Drawing.Size(776, 324);
+            this.tabMenus.Size = new System.Drawing.Size(776, 389);
             this.tabMenus.TabIndex = 5;
             // 
             // t_Qlist
@@ -89,9 +91,10 @@
             this.t_Qlist.Controls.Add(this.btnWrite);
             this.t_Qlist.Controls.Add(this.db_Qlist);
             this.t_Qlist.Location = new System.Drawing.Point(4, 32);
+            this.t_Qlist.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.t_Qlist.Name = "t_Qlist";
-            this.t_Qlist.Padding = new System.Windows.Forms.Padding(3);
-            this.t_Qlist.Size = new System.Drawing.Size(768, 288);
+            this.t_Qlist.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.t_Qlist.Size = new System.Drawing.Size(768, 353);
             this.t_Qlist.TabIndex = 0;
             this.t_Qlist.Text = "질문목록";
             this.t_Qlist.UseVisualStyleBackColor = true;
@@ -99,9 +102,10 @@
             // btnWrite
             // 
             this.btnWrite.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnWrite.Location = new System.Drawing.Point(658, 251);
+            this.btnWrite.Location = new System.Drawing.Point(658, 301);
+            this.btnWrite.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnWrite.Name = "btnWrite";
-            this.btnWrite.Size = new System.Drawing.Size(103, 35);
+            this.btnWrite.Size = new System.Drawing.Size(103, 42);
             this.btnWrite.TabIndex = 4;
             this.btnWrite.Text = "글쓰기";
             this.btnWrite.UseVisualStyleBackColor = true;
@@ -110,11 +114,12 @@
             // db_Qlist
             // 
             this.db_Qlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.db_Qlist.Location = new System.Drawing.Point(4, 4);
+            this.db_Qlist.Location = new System.Drawing.Point(4, 5);
+            this.db_Qlist.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.db_Qlist.Name = "db_Qlist";
             this.db_Qlist.RowTemplate.Height = 27;
             this.db_Qlist.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.db_Qlist.Size = new System.Drawing.Size(761, 242);
+            this.db_Qlist.Size = new System.Drawing.Size(761, 290);
             this.db_Qlist.TabIndex = 0;
             // 
             // t_MQlist
@@ -123,9 +128,10 @@
             this.t_MQlist.Controls.Add(this.btn_Modify);
             this.t_MQlist.Controls.Add(this.db_MQlist);
             this.t_MQlist.Location = new System.Drawing.Point(4, 32);
+            this.t_MQlist.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.t_MQlist.Name = "t_MQlist";
-            this.t_MQlist.Padding = new System.Windows.Forms.Padding(3);
-            this.t_MQlist.Size = new System.Drawing.Size(768, 288);
+            this.t_MQlist.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.t_MQlist.Size = new System.Drawing.Size(768, 353);
             this.t_MQlist.TabIndex = 1;
             this.t_MQlist.Text = "내가 작성한 목록";
             this.t_MQlist.UseVisualStyleBackColor = true;
@@ -133,9 +139,10 @@
             // btn_Delete
             // 
             this.btn_Delete.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Delete.Location = new System.Drawing.Point(659, 153);
+            this.btn_Delete.Location = new System.Drawing.Point(659, 184);
+            this.btn_Delete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(103, 129);
+            this.btn_Delete.Size = new System.Drawing.Size(103, 155);
             this.btn_Delete.TabIndex = 2;
             this.btn_Delete.Text = "삭제";
             this.btn_Delete.UseVisualStyleBackColor = true;
@@ -143,9 +150,10 @@
             // btn_Modify
             // 
             this.btn_Modify.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Modify.Location = new System.Drawing.Point(658, 4);
+            this.btn_Modify.Location = new System.Drawing.Point(658, 5);
+            this.btn_Modify.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Modify.Name = "btn_Modify";
-            this.btn_Modify.Size = new System.Drawing.Size(103, 129);
+            this.btn_Modify.Size = new System.Drawing.Size(103, 155);
             this.btn_Modify.TabIndex = 1;
             this.btn_Modify.Text = "수정";
             this.btn_Modify.UseVisualStyleBackColor = true;
@@ -153,20 +161,22 @@
             // db_MQlist
             // 
             this.db_MQlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.db_MQlist.Location = new System.Drawing.Point(4, 4);
+            this.db_MQlist.Location = new System.Drawing.Point(4, 5);
+            this.db_MQlist.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.db_MQlist.Name = "db_MQlist";
             this.db_MQlist.RowTemplate.Height = 27;
             this.db_MQlist.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.db_MQlist.Size = new System.Drawing.Size(648, 281);
+            this.db_MQlist.Size = new System.Drawing.Size(648, 337);
             this.db_MQlist.TabIndex = 0;
             // 
             // t_AttSit
             // 
             this.t_AttSit.Controls.Add(this.db_AttSit);
             this.t_AttSit.Location = new System.Drawing.Point(4, 32);
+            this.t_AttSit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.t_AttSit.Name = "t_AttSit";
-            this.t_AttSit.Padding = new System.Windows.Forms.Padding(3);
-            this.t_AttSit.Size = new System.Drawing.Size(768, 288);
+            this.t_AttSit.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.t_AttSit.Size = new System.Drawing.Size(768, 353);
             this.t_AttSit.TabIndex = 2;
             this.t_AttSit.Text = "출결 현황";
             this.t_AttSit.UseVisualStyleBackColor = true;
@@ -174,33 +184,38 @@
             // db_AttSit
             // 
             this.db_AttSit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.db_AttSit.Location = new System.Drawing.Point(4, 4);
+            this.db_AttSit.Location = new System.Drawing.Point(4, 5);
+            this.db_AttSit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.db_AttSit.Name = "db_AttSit";
             this.db_AttSit.RowTemplate.Height = 27;
             this.db_AttSit.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.db_AttSit.Size = new System.Drawing.Size(757, 285);
+            this.db_AttSit.Size = new System.Drawing.Size(757, 342);
             this.db_AttSit.TabIndex = 0;
             // 
             // btnEntry
             // 
             this.btnEntry.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEntry.Location = new System.Drawing.Point(554, 41);
+            this.btnEntry.Location = new System.Drawing.Point(554, 49);
+            this.btnEntry.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEntry.Name = "btnEntry";
-            this.btnEntry.Size = new System.Drawing.Size(103, 42);
+            this.btnEntry.Size = new System.Drawing.Size(103, 50);
             this.btnEntry.TabIndex = 4;
             this.btnEntry.Text = "입/퇴실";
             this.btnEntry.UseVisualStyleBackColor = true;
             // 
-            // Board
+            // BoardForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 465);
+            this.ClientSize = new System.Drawing.Size(800, 558);
             this.Controls.Add(this.lbBoard);
             this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.tabMenus);
             this.Controls.Add(this.btnEntry);
-            this.Name = "Board";
+            this.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Name = "BoardForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Board";
             this.tabMenus.ResumeLayout(false);
             this.t_Qlist.ResumeLayout(false);

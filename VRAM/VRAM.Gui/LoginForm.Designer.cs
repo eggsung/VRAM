@@ -95,7 +95,7 @@
             // txtMemeberId
             // 
             this.txtMemeberId.Font = new System.Drawing.Font("Consolas", 12F);
-            this.txtMemeberId.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtMemeberId.ForeColor = System.Drawing.Color.Black;
             this.txtMemeberId.Location = new System.Drawing.Point(200, 170);
             this.txtMemeberId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMemeberId.Name = "txtMemeberId";
@@ -105,10 +105,11 @@
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Consolas", 12F);
-            this.txtPassword.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtPassword.ForeColor = System.Drawing.Color.Black;
             this.txtPassword.Location = new System.Drawing.Point(200, 231);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(313, 31);
             this.txtPassword.TabIndex = 18;
             // 
