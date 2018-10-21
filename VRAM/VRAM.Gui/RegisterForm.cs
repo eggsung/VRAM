@@ -33,37 +33,13 @@ namespace VRAM.Gui
         public void btnRegister_Click(object sender, EventArgs e)
         {
             Member m = new Member();
-            m.MemberId = txtMemberId.ToString();
-            m.MemberName = txtMemberName.ToString();
-            m.PhoneNum = txtPhoneNum.ToString();
-            m.Email = txtEmail.ToString();
-            m.Password = txtPassword.ToString();
-            
-            // 관리자 버튼이 클릭되면
-            if (rbAdmin.Checked == true)
-            {
-                using (VRAMEntities context = new VRAMEntities())
-                {
-                    MemberRole mr = new MemberRole();
-                    //mr.MemberId = ;
-                    mr.RoleId = 1;
-                    context.MemberRoles.Add(mr);
-                    context.SaveChanges();
-                }
-            }
-            else
-            {
-                using (VRAMEntities context = new VRAMEntities())
-                {
-                    MemberRole mr = new MemberRole();
-                    mr.MemberId = MemberData.GetOwnMemberId(txtMemberId.Text);
-                    mr.RoleId = 2;
-                    context.MemberRoles.Add(mr);
-                    context.SaveChanges();
-                }
-            }
-
+            m.MemberId = txtMemberId.Text;
+            m.MemberName = txtMemberName.Text;
+            m.PhoneNum = txtPhoneNum.Text;
+            m.Email = txtEmail.Text;
+            m.Password = txtPassword.Text;
             DataRepository.Member.Insert(m);
+            MessageBox.Show("회원가입이 완료되었습니다.");
         }
     }
 }

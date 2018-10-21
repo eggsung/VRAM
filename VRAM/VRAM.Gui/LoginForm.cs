@@ -34,30 +34,33 @@ namespace VRAM.Gui
 
         if (txtMemeberId.Text == "" || txtPassword.Text == "")
            {
-               MessageBox.Show("Please provide MemberId and Password");
+               MessageBox.Show("ID와 Password를 입력해주세요.");
                return;
            }
-           try
-           {
-              
-               if (MemberData.GetMemberId().Contains(txtMemeberId.Text) && MemberData.GetMemberPassword().Contains(txtPassword.Text))
-               {
-                   Credential.Instance.Load(txtMemeberId.Text);
-                        MessageBox.Show("Login Successful!");
-                        this.Hide();
-                        BoardForm boardForm = new BoardForm();
-                        boardForm.ShowDialog();
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Login Failed!");
-                    }
-                }
-                catch (Exception ex)
+        else if (MemberData.GetMemberId().Contains(txtMemeberId.Text) && MemberData.GetMemberPassword().Contains(txtPassword.Text))
+        {
+            Credential.Instance.Load(txtMemeberId.Text);
+            this.Hide();
+            BoardForm boardForm = new BoardForm();
+            boardForm.ShowDialog();
+            this.Close();
+        }
+        else if (MemberData.GetMemberId().Contains(txtMemeberId.Text))
+        {
+            MessageBox.Show("비밀번호를 확인해주세요.");
+        }
+
+            try
                 {
-                    MessageBox.Show(ex.Message);
+
+                   
                 }
-           }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("회원이 아닙니다. ");
+                }
+            
+        }
+
     }
 }

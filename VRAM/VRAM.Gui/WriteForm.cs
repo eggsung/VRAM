@@ -20,14 +20,14 @@ namespace VRAM.Gui
 
         private void btnWriteSend_Click(object sender, EventArgs e)
         {
-            Board b = new Board();
+            /*Board b = new Board();
 
             b.MemberId = Credential.Instance.OwnMemberId();
             b.QContext
 
 
 
-            DataRepository.Borad.Insert(b);
+            DataRepository.Borad.Insert(b);*/
         }
     }
 }
